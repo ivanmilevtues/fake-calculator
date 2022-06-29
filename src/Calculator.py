@@ -1,4 +1,5 @@
 from src.PlusOperator import PlusOperator
+from src.MultiplyOperator import MultiplyOperator
 from src.Parser import parse_string_to_operands
 
 
@@ -18,11 +19,13 @@ class Calculator:
 
         for op in self.operators:
             if op.can_handle(operator):
-                return op.handle(operand, self.execute(operators[1:], operands[1:]))
+                res = op.handle(operand, self.execute(operators[1:], operands[1:]))
+                print(res, operand, operator)
+                return res
 
 
 if __name__ == '__main__':
-    operators = [PlusOperator()]
+    operators = [PlusOperator(), MultiplyOperator()]
     print(f"Enter your equation without spaces. Supported operators: {operators}")
     print("To exit, type exit.")
     calc = Calculator(operators)
