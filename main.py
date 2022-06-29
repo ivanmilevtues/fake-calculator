@@ -3,10 +3,11 @@ from src.MultiplyOperator import MultiplyOperator
 from src.MinusOperator import MinusOperator
 
 from src.Calculator import Calculator
+from src.Power import PowerOperator
 
 
 if __name__ == '__main__':
-    operators = [PlusOperator(), MultiplyOperator(), MinusOperator()]
+    operators = [PlusOperator(), MultiplyOperator(), MinusOperator(), PowerOperator()]
     print(f"Enter your equation without spaces. Supported operators: {operators}")
     print("To exit, type exit.")
     calc = Calculator(operators)
