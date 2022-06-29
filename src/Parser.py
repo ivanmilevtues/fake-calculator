@@ -2,6 +2,8 @@ from operator import eq
 
 
 def convert_to_prefix(equation):
+    if '-' == equation[0]:
+        equation = '0 ' + equation
     stack = []
     postfix = ''
     equation = equation.split(' ')

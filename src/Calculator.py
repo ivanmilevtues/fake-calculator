@@ -15,5 +15,6 @@ class Calculator:
             return int(element)
         for op in self.operators:
             if op.can_handle(element):
-                res = op.handle(int(prefix_equation.pop(0)), self.execute(prefix_equation))
+                arg = int(prefix_equation.pop(0))
+                res = op.handle(arg, self.execute(prefix_equation))
                 return res
